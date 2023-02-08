@@ -34,4 +34,10 @@ routerDataCenter.get('/:trabajo/:nivel', (req, res) => {
     res.send(JSON.stringify(resultados))
 });
 
+routerDataCenter.post('/', (req, res) => {
+    let servicioNuevo = req.body;
+    datacenter.push(servicioNuevo);
+    res.send(JSON.stringify(datacenter));
+});
+
 module.exports = routerDataCenter;

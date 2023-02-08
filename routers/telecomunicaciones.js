@@ -32,4 +32,10 @@ routerTelecomunicaciones.get('/:trabajo/:nivel', (req, res) => {
     res.send(JSON.stringify(resultados))
 });
 
+routerTelecomunicaciones.post('/', (req, res) => {
+    let servicioNuevo = req.body;
+    telecomunicaciones.push(servicioNuevo);
+    res.send(JSON.stringify(telecomunicaciones));
+});
+
 module.exports = routerTelecomunicaciones;
